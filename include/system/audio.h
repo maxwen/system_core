@@ -555,10 +555,9 @@ static inline bool audio_is_bluetooth_sco_device(audio_devices_t device)
 {
 #ifndef ICS_AUDIO_BLOB
     device &= ~AUDIO_DEVICE_BIT_IN;
-#else
+#endif
     if ((popcount(device) == 1) && (device & (AUDIO_DEVICE_OUT_ALL_SCO |
                    AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET)))
-#endif
         return true;
     else
         return false;
